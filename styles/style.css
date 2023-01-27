@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#lang_btn {
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.none {
+  display: none;
+}
+
+section {
+  width: 100%;
+}
+section div {
+  margin-top: 40px;
+}
+section div h1 {
+  font-size: 80px;
+  text-align: center;
+}
+section div #RealtimeClockArea {
+  width: 100%;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 30px;
+}/*# sourceMappingURL=style.css.map */

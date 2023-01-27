@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#lang_btn {
+  width: 100%;
+  font-size: 40px;
+  text-align: center;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  user-select: none;
+}
+
+.none {
+  display: none;
+}
+
+section {
+  width: 100%;
+  div {
+    margin-top: 40px;
+
+    h1 {
+      font-size: 80px;
+      text-align: center;
+    }
+
+    #RealtimeClockArea {
+      width: 100%;
+      position: absolute;
+      top: 35%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 30px;
+    }
+  }
+}
