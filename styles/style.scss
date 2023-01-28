@@ -4,37 +4,81 @@
   box-sizing: border-box;
 }
 
-#lang_btn {
+body {
+  background-color: rgb(255, 114, 94);
   width: 100%;
-  font-size: 40px;
-  text-align: center;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  user-select: none;
+  height: 100vh;
+  padding: 80px 0 0 40px;
 }
 
-.none {
-  display: none;
+main {
+  height: calc(100vh - 80px);
+  padding: 70px 0 0 90px;
+  border-radius: 30px 0 0 0;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.84);
 }
 
-section {
-  width: 100%;
-  div {
-    margin-top: 40px;
+.title {
+  h1 {
+    z-index: 1;
+    position: relative;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 70px;
+    margin-bottom: 80px;
+    letter-spacing: 10px;
+    line-height: 90px;
+  }
+  .background {
+    opacity: 0.4;
+    z-index: 0;
+    position: absolute;
+    top: 31%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 180px;
+    background-image: linear-gradient(
+      135deg,
+      rgb(252, 61, 27) 0%,
+      rgb(255, 114, 94) 100%
+    );
+    border-radius: 67% 33% 70% 30% / 37% 42% 58% 63%;
+    // box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  }
+}
 
-    h1 {
-      font-size: 80px;
-      text-align: center;
+.main_content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  img {
+    width: 520px;
+    margin-right: 110px;
+  }
+
+  .text {
+    font-family: "Zen Maru Gothic", sans-serif;
+    letter-spacing: 8px;
+    line-height: 40px;
+    margin-top: 10px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 100;
+      margin-bottom: 30px;
     }
 
-    #RealtimeClockArea {
-      width: 100%;
-      position: absolute;
-      top: 35%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      font-size: 30px;
+    h2::first-letter {
+      float: left;
+      font-size: 70px;
+      line-height: 70px;
+    }
+
+    p {
+      font-size: 24px;
+      margin: 0 5px 30px 0;
     }
   }
 }

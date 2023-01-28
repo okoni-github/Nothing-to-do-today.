@@ -5,39 +5,80 @@
           box-sizing: border-box;
 }
 
-#lang_btn {
+body {
+  background-color: rgb(255, 114, 94);
   width: 100%;
-  font-size: 40px;
-  text-align: center;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  height: 100vh;
+  padding: 80px 0 0 40px;
 }
 
-.none {
-  display: none;
+main {
+  height: calc(100vh - 80px);
+  padding: 70px 0 0 90px;
+  border-radius: 30px 0 0 0;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.84);
 }
 
-section {
-  width: 100%;
+.title h1 {
+  z-index: 1;
+  position: relative;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 70px;
+  margin-bottom: 80px;
+  letter-spacing: 10px;
+  line-height: 90px;
 }
-section div {
-  margin-top: 40px;
-}
-section div h1 {
-  font-size: 80px;
-  text-align: center;
-}
-section div #RealtimeClockArea {
-  width: 100%;
+.title .background {
+  opacity: 0.4;
+  z-index: 0;
   position: absolute;
-  top: 35%;
-  left: 50%;
+  top: 31%;
+  left: 25%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  font-size: 30px;
+  width: 280px;
+  height: 180px;
+  background-image: -webkit-linear-gradient(315deg, rgb(252, 61, 27) 0%, rgb(255, 114, 94) 100%);
+  background-image: linear-gradient(135deg, rgb(252, 61, 27) 0%, rgb(255, 114, 94) 100%);
+  border-radius: 67% 33% 70% 30%/37% 42% 58% 63%;
+}
+
+.main_content {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.main_content img {
+  width: 520px;
+  margin-right: 110px;
+}
+.main_content .text {
+  font-family: "Zen Maru Gothic", sans-serif;
+  letter-spacing: 8px;
+  line-height: 40px;
+  margin-top: 10px;
+}
+.main_content .text h2 {
+  font-size: 24px;
+  font-weight: 100;
+  margin-bottom: 30px;
+}
+.main_content .text h2::first-letter {
+  float: left;
+  font-size: 70px;
+  line-height: 70px;
+}
+.main_content .text p {
+  font-size: 24px;
+  margin: 0 5px 30px 0;
 }/*# sourceMappingURL=style.css.map */
