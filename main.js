@@ -41,17 +41,17 @@ RealTime = () => {
   var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
   var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
 
-  //   if (lang_btn.textContent == "EN") {
-  //     var msg =
-  //       "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-  //     document.getElementById("RealtimeClockArea").innerHTML = msg;
-  //   } else if (lang_btn.textContent == "CN") {
-  //     var msg = "Current time is" + nowHour + ":" + nowMin + ":" + nowSec;
-  //     document.getElementById("RealtimeClockArea").innerHTML = msg;
-  //   } else if (lang_btn.textContent == "JA") {
-  //     var msg = "现在的时间是、" + nowHour + ":" + nowMin + ":" + nowSec;
-  //     document.getElementById("RealtimeClockArea").innerHTML = msg;
-  //   }
+  if (lang_btn.textContent == "EN") {
+    var msg =
+      "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+    document.getElementById("RealtimeClockArea").innerHTML = msg;
+  } else if (lang_btn.textContent == "CN") {
+    var msg = "Current time is " + nowHour + ":" + nowMin + ":" + nowSec;
+    document.getElementById("RealtimeClockArea").innerHTML = msg;
+  } else if (lang_btn.textContent == "JA") {
+    var msg = "目前的时间是 " + nowHour + ":" + nowMin + ":" + nowSec;
+    document.getElementById("RealtimeClockArea").innerHTML = msg;
+  }
 };
 
 setInterval(RealTime, 1000);
@@ -75,7 +75,13 @@ lang_btn.addEventListener("click", () => {
       en[1].classList.add("none");
       en[2].classList.remove("none");
     }
-    var msg = "Current time is" + nowHour + ":" + nowMin + ":" + nowSec;
+
+    var nowTime = new Date(); //  現在日時を得る
+    var nowHour = set2fig(nowTime.getHours()); // 時を抜き出す
+    var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
+    var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
+
+    var msg = "Current time is " + nowHour + ":" + nowMin + ":" + nowSec;
     document.getElementById("RealtimeClockArea").innerHTML = msg;
 
     ja.forEach((element) => element.classList.add("none"));
@@ -100,7 +106,12 @@ lang_btn.addEventListener("click", () => {
       cn[2].classList.remove("none");
     }
 
-    var msg = "现在的时间是、" + nowHour + ":" + nowMin + ":" + nowSec;
+    var nowTime = new Date(); //  現在日時を得る
+    var nowHour = set2fig(nowTime.getHours()); // 時を抜き出す
+    var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
+    var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
+
+    var msg = "目前的时间是 " + nowHour + ":" + nowMin + ":" + nowSec;
     document.getElementById("RealtimeClockArea").innerHTML = msg;
 
     en.forEach((element) => element.classList.add("none"));
@@ -123,9 +134,16 @@ lang_btn.addEventListener("click", () => {
       ja[1].classList.add("none");
       ja[2].classList.remove("none");
     }
+
+    var nowTime = new Date(); //  現在日時を得る
+    var nowHour = set2fig(nowTime.getHours()); // 時を抜き出す
+    var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
+    var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
+
     var msg =
       "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
     document.getElementById("RealtimeClockArea").innerHTML = msg;
+
     cn.forEach((element) => element.classList.add("none"));
     lang_btn.textContent = "EN";
   }
