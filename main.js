@@ -1,3 +1,9 @@
+const lang_btn = document.getElementById("lang_btn");
+const greeting = document.getElementById("greeting");
+const ja = document.querySelectorAll(".ja");
+const en = document.querySelectorAll(".en");
+const cn = document.querySelectorAll(".cn");
+
 set2fig = (num) => {
   // 桁数が1桁だったら先頭に0を加えて2桁に調整する
   let ret;
@@ -13,26 +19,7 @@ var nowTime = new Date(); //  現在日時を得る
 var nowHour = set2fig(nowTime.getHours()); // 時を抜き出す
 var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
 var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
-var msg = "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-document.getElementById("RealtimeClockArea").innerHTML = msg;
 
-RealTime = () => {
-  var nowTime = new Date(); //  現在日時を得る
-  var nowHour = set2fig(nowTime.getHours()); // 時を抜き出す
-  var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
-  var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
-  var msg =
-    "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
-  document.getElementById("RealtimeClockArea").innerHTML = msg;
-};
-
-setInterval(RealTime, 1000);
-
-const lang_btn = document.getElementById("lang_btn");
-const greeting = document.getElementById("greeting");
-const ja = document.querySelectorAll(".ja");
-const en = document.querySelectorAll(".en");
-const cn = document.querySelectorAll(".cn");
 const numNowHour = Number(nowHour);
 
 if (numNowHour <= 4) {
@@ -44,6 +31,30 @@ if (numNowHour <= 4) {
 } else if (numNowHour <= 24) {
   greeting.textContent = "こんばんは！";
 }
+
+var msg = "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+document.getElementById("RealtimeClockArea").innerHTML = msg;
+
+RealTime = () => {
+  var nowTime = new Date(); //  現在日時を得る
+  var nowHour = set2fig(nowTime.getHours()); // 時を抜き出す
+  var nowMin = set2fig(nowTime.getMinutes()); // 分を抜き出す
+  var nowSec = set2fig(nowTime.getSeconds()); // 秒を抜き出す
+
+  //   if (lang_btn.textContent == "EN") {
+  //     var msg =
+  //       "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+  //     document.getElementById("RealtimeClockArea").innerHTML = msg;
+  //   } else if (lang_btn.textContent == "CN") {
+  //     var msg = "Current time is" + nowHour + ":" + nowMin + ":" + nowSec;
+  //     document.getElementById("RealtimeClockArea").innerHTML = msg;
+  //   } else if (lang_btn.textContent == "JA") {
+  //     var msg = "现在的时间是、" + nowHour + ":" + nowMin + ":" + nowSec;
+  //     document.getElementById("RealtimeClockArea").innerHTML = msg;
+  //   }
+};
+
+setInterval(RealTime, 1000);
 
 lang_btn.addEventListener("click", () => {
   if (lang_btn.textContent == "EN") {
@@ -64,6 +75,9 @@ lang_btn.addEventListener("click", () => {
       en[1].classList.add("none");
       en[2].classList.remove("none");
     }
+    var msg = "Current time is" + nowHour + ":" + nowMin + ":" + nowSec;
+    document.getElementById("RealtimeClockArea").innerHTML = msg;
+
     ja.forEach((element) => element.classList.add("none"));
     greeting.textContent = "";
     lang_btn.textContent = "CN";
@@ -85,6 +99,10 @@ lang_btn.addEventListener("click", () => {
       cn[1].classList.add("none");
       cn[2].classList.remove("none");
     }
+
+    var msg = "现在的时间是、" + nowHour + ":" + nowMin + ":" + nowSec;
+    document.getElementById("RealtimeClockArea").innerHTML = msg;
+
     en.forEach((element) => element.classList.add("none"));
     lang_btn.textContent = "JA";
   } else if (lang_btn.textContent == "JA") {
@@ -105,23 +123,10 @@ lang_btn.addEventListener("click", () => {
       ja[1].classList.add("none");
       ja[2].classList.remove("none");
     }
+    var msg =
+      "現在の時刻は、" + nowHour + ":" + nowMin + ":" + nowSec + " です。";
+    document.getElementById("RealtimeClockArea").innerHTML = msg;
     cn.forEach((element) => element.classList.add("none"));
     lang_btn.textContent = "EN";
   }
 });
-
-// lang_btn.addEventListener("click", () => {
-//   if (lang_btn.textContent == "EN") {
-//     ja.forEach((element) => element.classList.add("none"));
-//     en.forEach((element) => element.classList.remove("none"));
-//     lang_btn.textContent = "CN";
-//   } else if (lang_btn.textContent == "CN") {
-//     en.forEach((element) => element.classList.add("none"));
-//     cn.forEach((element) => element.classList.remove("none"));
-//     lang_btn.textContent = "JA";
-//   } else if (lang_btn.textContent == "JA") {
-//     cn.forEach((element) => element.classList.add("none"));
-//     ja.forEach((element) => element.classList.remove("none"));
-//     lang_btn.textContent = "EN";
-//   }
-// });
